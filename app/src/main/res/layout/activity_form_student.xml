@@ -4,18 +4,22 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
     <EditText
+        android:id="@+id/et_student_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Nome" />
     <EditText
+        android:id="@+id/et_student_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Email" />
     <NumberPicker
+        android:id="@+id/np_student_age"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Idade" />
     <RatingBar
+        android:id="@+id/rb_student_rate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
