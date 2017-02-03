@@ -24,8 +24,5 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:max="5"/>
-    <Button android:id="@+id/bt_save_form_student"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Salvar"/>
+
 </LinearLayout>
