@@ -5,10 +5,11 @@ package br.unibratec.pmb.cap2.model;
  */
 
 public class Student {
+    private Long id;
     private String name;
     private String email;
-    private int age;
-    private float rate;
+    private Integer age;
+    private Float rate;
 
     public String getName() {
         return name;
@@ -26,19 +27,32 @@ public class Student {
         this.email = email;
     }
 
-    public int getAge() {
+    public Integer getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(Integer age) {
         this.age = age;
     }
 
-    public float getRate() {
+    public Float getRate() {
         return rate;
     }
 
-    public void setRate(float rate) {
+    public void setRate(Float rate) {
         this.rate = rate;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return getId() + " - " + getName();
     }
 }

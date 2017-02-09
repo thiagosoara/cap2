@@ -17,13 +17,13 @@ public class FormStudentHelper {
 
     private EditText nameField;
     private EditText emailField;
-    private NumberPicker ageField;
+    private EditText ageField;
     private RatingBar rateField;
 
     public FormStudentHelper(FormStudentActivity activity) {
         nameField = (EditText) activity.findViewById(R.id.et_student_name);
         emailField = (EditText) activity.findViewById(R.id.et_student_email);
-        ageField = (NumberPicker) activity.findViewById(R.id.np_student_age);
+        ageField = (EditText) activity.findViewById(R.id.np_student_age);
         rateField = (RatingBar) activity.findViewById(R.id.rb_student_rate);
 
     }
@@ -32,8 +32,8 @@ public class FormStudentHelper {
         Student student = new Student();
         student.setName(nameField.getText().toString());
         student.setEmail(emailField.getText().toString());
-        student.setAge(ageField.getMaxValue());
-        student.setRate(rateField.getProgress());
+        student.setAge(Integer.valueOf(ageField.getText().toString()));
+        student.setRate(Float.valueOf(rateField.getProgress()));
         return student;
     }
 

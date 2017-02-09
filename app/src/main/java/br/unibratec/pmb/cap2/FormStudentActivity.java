@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import br.unibratec.pmb.cap2.dao.StudentDAO;
 import br.unibratec.pmb.cap2.helpers.FormStudentHelper;
 import br.unibratec.pmb.cap2.model.Student;
 
@@ -38,8 +39,14 @@ public class FormStudentActivity extends AppCompatActivity {
         switch (item.getItemId()){
             case R.id.menu_formulario_ok:
                 student = formStudentHelper.getStudent();
-                Toast.makeText(FormStudentActivity.this, "Salvo "+student.getName()+"!", Toast.LENGTH_SHORT).show();
+                //Criar conexão com o banco de dados
+                StudentDAO studentDAO = new StudentDAO(this);
+                //inserir o objeto Student
+                studentDAO.save(student);
+                //fechar conexão com o banco de dados
+                studentDAO.close();
                 finish();
+                break;
         }
         return super.onOptionsItemSelected(item);
     }
