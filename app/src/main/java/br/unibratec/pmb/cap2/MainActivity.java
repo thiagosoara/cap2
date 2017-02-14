@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import java.text.Normalizer;
 import java.util.List;
 
 import br.unibratec.pmb.cap2.dao.StudentDAO;
@@ -29,6 +30,15 @@ public class MainActivity extends AppCompatActivity {
         loadStudentList();
 
         registerForContextMenu(lvAlunos);
+
+        lvAlunos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent it = new Intent(MainActivity.this, FormStudentActivity.class);
+                it.putExtra("student", students.get(position));
+                startActivity(it);
+            }
+        });
 
         Button btNewStudent = (Button)findViewById(R.id.bt_new_student);
         btNewStudent.setOnClickListener(new View.OnClickListener() {
