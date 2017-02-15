@@ -64,7 +64,7 @@ public class FormStudentHelper {
         phoneField.setText(student.getPhone());
         emailField.setText(student.getEmail());
         addressField.setText(student.getAddress());
-        ageField.setText(Integer.valueOf(student.getAge()));
+        ageField.setText(String.valueOf(student.getAge()));
         rateField.setProgress(student.getRate().intValue());
         loadImage(student.getPhoto());
     }
